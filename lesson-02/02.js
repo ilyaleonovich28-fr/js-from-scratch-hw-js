@@ -10,7 +10,7 @@
 let dice1; // your code
 let dice2; // your code
 let isWinningDouble; // your code
-
+let result;
 /*
 console.log('Первый бросок: ' + dice1)
 console.log('Второй бросок: ' + dice2)
@@ -25,7 +25,7 @@ dice1 = Math.floor(Math.random() * 6) + 1;
 dice2 = Math.floor(Math.random() * 6) + 1;
 console.log(dice1, dice2);
 
-isWinningDouble = (dice1 === dice2) && (dice1 > 3 && dice2 > 3);
+isWinningDouble = dice1 === dice2 && dice1 > 3 && dice2 > 3;
 result = isWinningDouble ? "Вы выиграли" : "вы проиграли";
 
 console.log(isWinningDouble, result);
