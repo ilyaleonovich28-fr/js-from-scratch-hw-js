@@ -7,9 +7,9 @@
 * Для успешного прохождения тестов не меняйте названия переменных!
 */
 
-let dice1 // your code
-let dice2 // your code
-let isWinningDouble // your code
+let dice1; // your code
+let dice2; // your code
+let isWinningDouble; // your code
 
 /*
 console.log('Первый бросок: ' + dice1)
@@ -20,3 +20,12 @@ if (isWinningDouble) {
   console.log('Не выигрышный дубль.')
 }
 */
+
+dice1 = Math.floor(Math.random() * 6) + 1;
+dice2 = Math.floor(Math.random() * 6) + 1;
+console.log(dice1, dice2);
+
+isWinningDouble = (dice1 === dice2) && (dice1 > 3 && dice2 > 3);
+result = isWinningDouble ? "Вы выиграли" : "вы проиграли";
+
+console.log(isWinningDouble, result);
