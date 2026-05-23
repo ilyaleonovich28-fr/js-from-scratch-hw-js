@@ -35,4 +35,4 @@ function filter(array, callback) {
   return evanElementArray;
 }
 
-addEventElement = (element, index) => element % 2 !== 0;
+const addEventElement = (element, index) => element % 2 !== 0;

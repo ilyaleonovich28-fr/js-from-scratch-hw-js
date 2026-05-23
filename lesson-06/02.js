@@ -36,4 +36,4 @@ function map(array, callback) {
   return multipliedElement;
 }
 
-addMultipliedElement = (element, index) => element * 2;
+const addMultipliedElement = (element, index) => element * 2;
