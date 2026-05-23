@@ -23,4 +23,18 @@ const oddNumbers = filter(numbers, (element, index) => {
 console.log(oddNumbers) // Должен вывести: [1, 3, 5]
 */
 
-const filter = () => {}
+// const filter = () => {};
+const number = [1, 2, 3, 4, 5];
+function filterEmulator(array, callback) {
+  const evanElementArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (callback(array[i], i)) {
+      evanElementArray.push(array[i]);
+    }
+  }
+  return evanElementArray;
+}
+
+addEventElement = (element, index) => element % 2 !== 0;
+
+filterEmulator(number, addEventElement);

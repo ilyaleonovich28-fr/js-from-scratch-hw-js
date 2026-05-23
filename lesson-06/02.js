@@ -24,4 +24,18 @@ const doubledNumbers = map(numbers, (element, index) => {
 console.log(doubledNumbers) // Должен вывести: [2, 4, 6, 8, 10]
 */
 
-const map = () => {}
+// const map = () => {}
+
+const number = [1, 2, 3, 4, 5];
+
+function mapEmulator(array, callback) {
+  const multipliedElement = [];
+  for (let i = 0; i < array.length; i++) {
+    multipliedElement.push(callback(array[i], i));
+  }
+  return multipliedElement;
+}
+
+addMultipliedElement = (element, index) => element * 2;
+
+mapEmulator(number, addMultipliedElement);
