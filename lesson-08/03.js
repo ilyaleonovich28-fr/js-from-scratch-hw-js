@@ -10,5 +10,14 @@
 */
 
 function truncate(str, maxLength) {
-  // your code
+  if (str.length <= maxLength) {
+    return str;
+  } else {
+    let result = "";
+    for (let i = 0; i < maxLength; i++) {
+      result += str[i];
+    }
+    result += "...";
+    return result;
+  }
 }
