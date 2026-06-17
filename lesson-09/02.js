@@ -25,19 +25,39 @@
 - 🧙‍♂️ Для выполнения этого задания нужно познакомиться с браузерными функциями setInterval (https://doka.guide/js/setinterval/) и clearInterval(https://doka.guide/js/clearinterval/). Они очень похоже на setTimeout и clearTimeout.
  */
 
-const startButton = document.getElementById('start')
-const cancelButton = document.getElementById('cancel')
-const countdownDisplay = document.getElementById('countdown')
+const startButton = document.getElementById("start");
+const cancelButton = document.getElementById("cancel");
+const countdownDisplay = document.getElementById("countdown");
 
-let isTimerStarted = false
-let timerId
+let isTimerStarted = false;
+let timerId;
 
-startButton.addEventListener('click', () => {
-  let counter = 3
+startButton.addEventListener("click", () => {
+  if (isTimerStarted) {
+    return;
+  }
+  isTimerStarted = true;
+  let counter = 3;
+  countdownDisplay.textContent = counter;
 
-  // your code
-})
+  timerId = setInterval(function () {
+    counter = counter - 1;
 
-cancelButton.addEventListener('click', () => {
-  // your code
-})
+    if (counter === 0) {
+      countdownDisplay.textContent = "🚀";
+      clearInterval(timerId);
+      isTimerStarted = false;
+      return;
+    }
+    countdownDisplay.textContent = counter;
+  }, 1000);
+});
+
+cancelButton.addEventListener("click", () => {
+  if (!isTimerStarted) {
+    return;
+  }
+  clearInterval(timerId);
+  countdownDisplay.textContent = "Отменено";
+  isTimerStarted = false;
+});
