@@ -30,9 +30,8 @@ const model = {
     view.renderMovies(this.movies);
   },
   deleteMovie(movieId) {
-    this.movies = model.movies.filter((item) => item.id !== Number(movieId));
+    this.movies = this.movies.filter((item) => item.id !== Number(movieId));
     view.renderMovies(this.movies);
-    view.displayMessage("Фильм успешно удалён!");
   },
 };
 
@@ -60,7 +59,7 @@ const view = {
       if (clickElement.classList.contains("delete-button")) {
         const movieElement = clickElement.parentElement;
         const elementId = movieElement.id;
-        model.deleteMovie(elementId);
+        controller.deleteMovie(elementId);
       }
     });
   },
@@ -101,6 +100,11 @@ const controller = {
     } else {
       view.displayMessage("Заполните все поля!", true);
     }
+  },
+
+  deleteMovie(movieId) {
+    model.deleteMovie(movieId);
+    view.displayMessage("Фильм успешно удалён!");
   },
 };
 
