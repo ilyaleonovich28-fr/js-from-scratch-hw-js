@@ -101,7 +101,6 @@ const controller = {
       view.displayMessage("Заполните все поля!", true);
     }
   },
-
   deleteMovie(movieId) {
     model.deleteMovie(movieId);
     view.displayMessage("Фильм успешно удалён!");
